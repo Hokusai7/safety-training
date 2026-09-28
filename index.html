@@ -1025,8 +1025,7 @@ dialog p{line-height:1.75;margin:8px 0}
       <div>
         <h2 id="reviewTitle">問題の解説</h2>
         <div class="review-winds">
-          <span class="pill" id="reviewRound"></span>
-          <span class="pill" id="reviewSeat"></span>
+          <span class="pill" id="reviewContext"></span>
         </div>
       </div>
       <button class="review-nav" id="reviewNext" aria-label="次の問題">▶</button>
@@ -1549,8 +1548,7 @@ function renderReview() {
   if (!x) return;
 
   document.getElementById('reviewTitle').textContent = `問題 ${x.number} の解説`;
-  document.getElementById('reviewRound').textContent = `${WIND_NAMES[x.roundWind]}場`;
-  document.getElementById('reviewSeat').textContent = `${WIND_NAMES[x.seatWind]}家`;
+  document.getElementById('reviewContext').textContent = `${WIND_NAMES[x.roundWind]}場・リーチ者は${WIND_NAMES[x.seatWind]}家`;
   document.getElementById('reviewAnswer').textContent = `正解：${x.answerName}`;
   document.getElementById('reviewReason').textContent = x.explanation;
   renderReviewDiscards(x.discards || []);
