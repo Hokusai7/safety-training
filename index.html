@@ -1369,7 +1369,7 @@ function updateTileScale() {
 }
 
 function contextLabel(q) {
-  return `${WIND_NAMES[q.roundWind]}場・${WIND_NAMES[q.seatWind]}家`;
+  return `${WIND_NAMES[q.roundWind]}場・リーチ者は${WIND_NAMES[q.seatWind]}家`;
 }
 
 function loadQuestion() {
@@ -1728,14 +1728,14 @@ function renderSummary() {
     const status = document.createElement('span');
     status.className = x.firstTry ? 'status-ok' : 'status-ng';
     status.textContent = x.firstTry ? '○ 一発正解' : '× 間違いあり';
-    s.append(status, document.createTextNode(`　問題${x.number}　${WIND_NAMES[x.roundWind]}場・${WIND_NAMES[x.seatWind]}家`));
+    s.append(status, document.createTextNode(`　問題${x.number}　${WIND_NAMES[x.roundWind]}場・リーチ者は${WIND_NAMES[x.seatWind]}家`));
 
     const body = document.createElement('div');
     body.className = 'summary-body';
 
     const context = document.createElement('div');
     context.className = 'summary-context';
-    context.textContent = `${WIND_NAMES[x.roundWind]}場・${WIND_NAMES[x.seatWind]}家`;
+    context.textContent = `${WIND_NAMES[x.roundWind]}場・リーチ者は${WIND_NAMES[x.seatWind]}家`;
     body.appendChild(context);
     body.appendChild(makeSummaryHand(x.hand));
 
