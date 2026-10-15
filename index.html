@@ -830,6 +830,54 @@ dialog p{line-height:1.75;margin:8px 0}
   .priority-result-label{font-size:8px !important}
 }
 
+
+/* Background palette settings */
+:root{--theme-paper:#f5f0e5;--theme-outer:radial-gradient(circle at 20% 0,#2c6d57 0,#123d32 46%,#09251e 100%);--theme-header:#fffaf0;--theme-ink:#17332b;--theme-muted:#55665d;--theme-panel:#fffaf0;--theme-border:#d8cfbe;--theme-accent:#123d32}
+body{background:var(--theme-outer);color:var(--theme-ink);transition:background .25s}
+.app{background:var(--theme-paper);color:var(--theme-ink);transition:background .25s}
+.app>header{background:var(--theme-header);border-color:var(--theme-border)}
+.theme-controls{display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap;gap:9px;padding:10px 26px;background:var(--theme-header);border-bottom:1px solid var(--theme-border);font-size:12px;font-weight:750;color:var(--theme-ink)}
+.theme-controls label{display:inline-flex;gap:6px;align-items:center}
+.theme-controls select{border:1px solid var(--theme-border);border-radius:9px;background:var(--theme-panel);color:var(--theme-ink);padding:6px 8px;font:inherit;max-width:115px}
+.app .score,.app .result-finish .big,.app .rule summary,.app .glossary dt,.app .dialog-answer,.app .summary-answer{color:var(--theme-accent)}
+.app .sub,.app .score small,.app .hand-info,.app .prompt span,.app .footer-note,.app .legend,.app .glossary dd,.app .reading,.app .summary-stats,.app .summary-context,.app .review-river-title{color:var(--theme-muted)}
+.app .result-panel,.app .rule details,.app .round-seat,.app .summary-item{background:var(--theme-panel);border-color:var(--theme-border);color:var(--theme-ink)}
+.app .context,.app .review-winds .pill{border-color:var(--theme-border)}
+.app .result-panel h3,.app .rules-body,.app .rule details,.app .summary-body{color:var(--theme-ink)}
+.app .safety-order,.app .bestbox{color:var(--theme-ink)}
+.app .timer-btn,.app .end-btn,.app .top-restart-btn,.app .next-btn,.app .priority-toggle,.app .summary-open-review{background:var(--theme-panel);color:var(--theme-accent);border-color:var(--theme-border)}
+.app .prompt > span:first-of-type{color:var(--theme-ink) !important}
+.app .rule,.app .summary-body{border-color:var(--theme-border)}
+.app .progress{background:var(--theme-border)}
+body[data-inner-theme="dark"]{--theme-paper:#171d23;--theme-header:#202a32;--theme-ink:#f0f5f4;--theme-muted:#d0dbd8;--theme-panel:#27323a;--theme-border:#566871;--theme-accent:#a8e7c7}
+body[data-inner-theme="dark"] .app .result-panel,
+body[data-inner-theme="dark"] .app .rule details,
+body[data-inner-theme="dark"] .app .summary-item{box-shadow:0 1px 0 #ffffff09}
+body[data-inner-theme="dark"] .app .safety-order{background:#30463b;border-color:#62866b}
+body[data-inner-theme="dark"] .app .bestbox{background:#30463b;border-color:#62866b}
+body[data-inner-theme="dark"] .app .badge.ok{background:#244d34;color:#bbf2c7}
+body[data-inner-theme="dark"] .app .badge.ng{background:#572d31;color:#ffd2d2}
+body[data-inner-theme="dark"] .app .badge.warn{background:#51432c;color:#ffe6b0}
+body[data-inner-theme="dark"] .app .context,
+body[data-inner-theme="dark"] .app .review-winds .pill{background:#314049;color:#e9f4ee}
+body[data-inner-theme="dark"] .app .correct-count,body[data-inner-theme="dark"] .app .status-ok{color:#89e9aa}
+body[data-inner-theme="dark"] .app .wrong-count,body[data-inner-theme="dark"] .app .status-ng{color:#ff9999}
+body[data-inner-theme="dark"] .app .end-btn,body[data-inner-theme="dark"] .app .retry-wrong-btn{color:#ffd0c8;background:#492e32;border-color:#ac7174}
+body[data-inner-theme="dark"] .app .result-finish .review-all-btn,body[data-inner-theme="dark"] .app .summary-actions .resume-btn,body[data-inner-theme="dark"] .app .close-dialog{color:#10251c;background:#a8e7c7}
+body[data-inner-theme="dark"] .app .summary-actions .start-over-btn,body[data-inner-theme="dark"] .app .restart-finish-btn{background:#27323a;color:#a8e7c7;border-color:#a8e7c7}
+body[data-inner-theme="dark"] .app .round-seat{background:#324149}
+body[data-inner-theme="dark"] .app .tile-btn img,body[data-inner-theme="dark"] .app .river-slot img{filter:brightness(1.08) drop-shadow(0 1px 2px #0009)}
+body[data-inner-theme="dark"] dialog{background:#202a32;color:#f0f5f4}
+body[data-inner-theme="dark"] dialog .review-nav,body[data-inner-theme="dark"] dialog .summary-open-review{background:#2b3942;color:#c9f0d8;border-color:#60737b}
+body[data-inner-theme="dark"] dialog .dialog-answer,body[data-inner-theme="dark"] dialog .summary-answer{color:#a8e7c7}
+body[data-inner-theme="dark"] dialog .summary-stats,body[data-inner-theme="dark"] dialog .review-river-title,body[data-inner-theme="dark"] dialog .summary-context{color:#d0dbd8}
+body[data-inner-theme="dark"] dialog .summary-item{background:#2b3942;border-color:#566871;color:#f0f5f4}
+body[data-inner-theme="dark"] dialog .summary-body{border-color:#566871}
+body[data-inner-theme="dark"] dialog .close-dialog,body[data-inner-theme="dark"] dialog .resume-btn{background:#a8e7c7;color:#10251c}
+body[data-inner-theme="dark"] dialog .start-over-btn{background:#2b3942;color:#a8e7c7;border-color:#a8e7c7}
+body[data-inner-theme="dark"] dialog .retry-wrong-btn{background:#492e32;color:#ffd0c8;border-color:#ac7174}
+/* Popup deliberately remains light for tile diagram legibility */
+@media(max-width:620px){.theme-controls{padding:8px 10px;justify-content:center;gap:8px;font-size:11px}.theme-controls select{padding:5px 6px;max-width:106px}}
 </style>
 </head>
 <body>
@@ -841,6 +889,7 @@ dialog p{line-height:1.75;margin:8px 0}
   </div>
   <div class="score"><span id="scoreLabel">1 / 100</span><small>全100問</small></div>
 </header>
+<div class="theme-controls" aria-label="背景色設定"><label for="innerTheme">ゲーム内 <select id="innerTheme"><option value="cream">生成り</option><option value="white">白</option><option value="blue">淡い青</option><option value="pink">淡いピンク</option><option value="gray">ライトグレー</option><option value="dark">黒</option></select></label><label for="outerTheme">ゲーム外 <select id="outerTheme"><option value="green">深緑</option><option value="white">白</option><option value="blue">濃い青</option><option value="pink">淡いピンク</option><option value="black">黒</option></select></label></div>
 <main>
   <div class="progress"><i id="progressBar"></i></div>
   <div class="action-row">
@@ -2161,5 +2210,15 @@ startQuestionSet(QUESTIONS, false, false);
 
 
 
+<script>
+(()=>{
+const inner={cream:['#f5f0e5','#fffaf0','#17332b','#55665d','#fffaf0','#d8cfbe','#123d32'],white:['#ffffff','#f7f9f8','#182b28','#52615d','#ffffff','#cbd7d2','#164b3a'],blue:['#eaf3fc','#f5f9ff','#18304b','#49627d','#f7fbff','#bfd1e4','#214e79'],pink:['#fff0f3','#fff7f8','#4b2934','#795661','#fffafc','#e5c6d0','#87445a'],gray:['#e8ebef','#f5f6f8','#252d36','#59636e','#f9fafb','#c4cbd3','#304758']};
+const outer={green:'radial-gradient(circle at 20% 0,#2c6d57 0,#123d32 46%,#09251e 100%)',white:'#f5f5f5',blue:'radial-gradient(circle at 20% 0,#456b99,#264e78 50%,#172d4d)',pink:'#f3dce6',black:'#171c25'};
+const i=document.getElementById('innerTheme'),o=document.getElementById('outerTheme');
+function apply(){const k=i.value,v=inner[k];document.body.dataset.innerTheme=k;const root=document.documentElement.style;if(v){['paper','header','ink','muted','panel','border','accent'].forEach((x,n)=>root.setProperty('--theme-'+x,v[n]));}else{['paper','header','ink','muted','panel','border','accent'].forEach(x=>root.removeProperty('--theme-'+x));}root.setProperty('--theme-outer',outer[o.value]||outer.green);try{localStorage.setItem('safety-training-background-v1',JSON.stringify({inner:k,outer:o.value}));}catch(e){}}
+try{const saved=JSON.parse(localStorage.getItem('safety-training-background-v1')||'{}');if(saved.inner&&[...i.options].some(x=>x.value===saved.inner))i.value=saved.inner;if(saved.outer&&[...o.options].some(x=>x.value===saved.outer))o.value=saved.outer;}catch(e){}
+i.addEventListener('change',apply);o.addEventListener('change',apply);apply();
+})();
+</script>
 </body>
 </html>
